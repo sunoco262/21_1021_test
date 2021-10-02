@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import Start from "./Start.js";
-
+import Numeron from "./Numeron.js";
+import Timer from "./Timer.js";
 class App extends Component {
   render() {
     return (
       <>
-        <Start />
+        <Numeron />
+        <Timer />
       </>
     );
   }

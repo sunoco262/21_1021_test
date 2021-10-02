@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Form from "./Form.js";
 let card = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let ans = [0, 1, 2, 3];
 function shuffle() {
@@ -16,7 +17,8 @@ function shuffle() {
     ans[j] = card[j];
   }
 }
-class Start extends Component {
+
+class Numeron extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,8 +36,9 @@ class Start extends Component {
       <>
         <h1>{this.state.data}</h1>
         <button onClick={this.shuffle}>シャッフル</button>
+        <Form keyword={"password"} />
       </>
     );
   }
 }
-export default Start;
+export default Numeron;
