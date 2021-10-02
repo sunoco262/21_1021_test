@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Reactテスト
+          Learn React wakuwakutintin
         </a>
       </header>
     </div>
