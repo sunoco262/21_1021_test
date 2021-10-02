@@ -17,7 +17,7 @@ class Counter extends Component {
   }
 
   increment = () => {
-    y = y + 1;
+    y = y + 5;
     this.setState({
       count: y,
       style: {
