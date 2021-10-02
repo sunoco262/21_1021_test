@@ -17,6 +17,7 @@ function App() {
         >
           Learn React wakuwakutintin
         </a>
+        <button>Click me!!</button>
       </header>
     </div>
   );
