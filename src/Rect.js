@@ -46,7 +46,7 @@ class Rect extends Component {
     return (
       <>
         <button onClick={this.clicked}>test</button>
-        <div style={this.state.style}></div>
+        <button style={this.state.style}></button>
       </>
     )
   }
