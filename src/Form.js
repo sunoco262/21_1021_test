@@ -6,11 +6,12 @@ function check(ans, input) {
   var eat,bite
   var num = [0,0,0,0];
   var a,b;
+  var str;
 
-  num[0] = parseInt(input / 1000)
-  num[1] = parseInt((input - (num[0]*1000))/100)
-  num[2] = parseInt((input - (num[0]*1000) - (num[1]*100))/10)
-  num[3] = parseInt((input - (num[0]*1000) - (num[1]*100) - (num[2]*10)))
+  num[0] = parseInt(input / 1000,10)
+  num[1] = parseInt((input - (num[0]*1000))/100,10)
+  num[2] = parseInt((input - (num[0]*1000) - (num[1]*100))/10,10)
+  num[3] = parseInt((input - (num[0]*1000) - (num[1]*100) - (num[2]*10)),10)
 
   eat = 0;
   bite = 0;
@@ -24,9 +25,12 @@ function check(ans, input) {
         bite++;
       }
     }
+    str = "eat" + eat + " bite" + bite
   }
+
+  console.log (str);
   
-  return(eat)
+  return(str)
 
 }
 class Form extends Component {
