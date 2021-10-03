@@ -9,6 +9,7 @@ class App extends Component {
       <>
         <Numeron />
         <Timer />
+        <Counter />
       </>
     );
   }
