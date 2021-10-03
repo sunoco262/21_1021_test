@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
 function check(ans, guess) {
+  console.log(typeof(ans),typeof(guess));
   if (ans === guess) {
+    
     return "正解！！";
   } else {
     return "はずれ！！";

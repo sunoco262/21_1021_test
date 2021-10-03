@@ -4,13 +4,15 @@ class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      style: {borderRadius:'0px'}
     };
   }
 
   increment = () => {
     this.setState({
-      count: this.state.count + 1
+      count: this.state.count + 1,
+      style: {borderRadius:this.state.count+'px'}
     });
   };
 
