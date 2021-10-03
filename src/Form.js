@@ -3,11 +3,30 @@ import React, { Component } from "react";
 //todo Numeronの判定に変える
 //ansがint型の配列　inputがstr型の文字列
 function check(ans, input) {
-  if (ans === input) {
-    return "正解！！";
-  } else {
-    return "はずれ！！";
+  var eat, bite;
+  var num = [0, 0, 0, 0];
+  var a, b;
+  var str;
+
+  num[0] = parseInt(input / 1000, 10);
+  num[1] = parseInt((input - num[0] * 1000) / 100, 10);
+  num[2] = parseInt((input - num[0] * 1000 - num[1] * 100) / 10, 10);
+  num[3] = parseInt(input - num[0] * 1000 - num[1] * 100 - num[2] * 10, 10);
+
+  eat = 0;
+  bite = 0;
+  for (a = 0; a < 4; a++) {
+    if (num[a] === ans[a]) {
+      eat++;
+    }
+    for (b = 0; b < 4; b++) {
+      if (a !== b && num[a] === ans[b]) {
+        bite++;
+      }
+    }
+    str = "eat" + eat + " bite" + bite;
   }
+  return str;
 }
 class Form extends Component {
   input = "";
