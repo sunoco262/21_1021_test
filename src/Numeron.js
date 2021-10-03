@@ -21,6 +21,7 @@ function shuffle() {
 class Numeron extends Component {
   constructor(props) {
     super(props);
+    shuffle();
     this.state = {
       data: ans
     };
@@ -34,7 +35,7 @@ class Numeron extends Component {
   render() {
     return (
       <>
-        <h1>{this.state.data}</h1>
+
         <button onClick={this.shuffle}>シャッフル</button>
         <Form keyword={this.state.data} />
       </>
