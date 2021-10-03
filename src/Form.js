@@ -26,7 +26,7 @@ function check(ans, input) {
     }
   }
   
-  return(eat+"eat"+" "+bite+"bite")
+  return(eat)
 
 }
 class Form extends Component {
