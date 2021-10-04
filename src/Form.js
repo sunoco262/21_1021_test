@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import InputButton from "./InputButton";
 //todo Numeronの判定に変える
 //ansがint型の配列　inputがstr型の文字列
 function check(ans, input) {
@@ -58,6 +58,8 @@ class Form extends Component {
           <div className="form-group">
             <p>{this.state.message}</p>
             <label>Guess:</label>
+            <InputButton x="10" y="10" text="0" onClick="" />
+            <InputButton x="30" y="10" text="1" />
             <input
               type="text"
               className="form-control"

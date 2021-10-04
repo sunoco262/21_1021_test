@@ -21,6 +21,7 @@ function shuffle() {
 class Numeron extends Component {
   constructor(props) {
     super(props);
+    shuffle();
     this.state = {
       data: ans
     };
