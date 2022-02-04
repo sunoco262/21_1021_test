@@ -48,21 +48,10 @@ class Form extends Component {
       form:form,
       cursor:cursor,
     };
-    this.doChange = this.doChange.bind(this);
-    this.doSubmit = this.doSubmit.bind(this);
     this.inputForm = this.inputForm.bind(this);
   }
 
-  doChange(event) {
-    this.input = event.target.value;
-  }
-
-  doSubmit(event) {
-    this.setState({
-      message: check(this.props.keyword, this.input) + "!!"
-    });
-    event.preventDefault();
-  }
+  
   
   inputForm(num){
     editform(num)
@@ -106,23 +95,6 @@ class Form extends Component {
         <div onClick={()=>this.inputForm("0")}><InputButton x="40" y="86" text="0"  /></div>
         <div onClick={()=>this.submitForm()}><InputButton x="70" y="86" text="✔"  /></div>
 
-        <form onSubmit={this.doSubmit}>
-          <div className="form-group">
-            <p>{this.state.message}</p>
-            <h1>{this.state.form}</h1>
-            <h1>{this.state.cursor}</h1>
-
-            <label>Guess:</label>
-            {/** todo */}
-            
-            <input
-              type="text"
-              className="form-control"
-              onChange={this.doChange}
-            />
-          </div>
-          <input type="submit" className="btn btn-primary" value="Enter" />
-        </form>
       </div>
     );
   }
