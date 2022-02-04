@@ -8,11 +8,11 @@ class InputButton extends Component {
     this.style = {
       backgroundColor: "gray",
       position: "absolute",
-      width: "10vw",
-      height: "10vw",
-      top: this.y + "vw",
+      width: "10vh",
+      height: "10vh",
+      top: this.y + "vh",
       left: this.x + "vw",
-      borderRadius: "5vw",
+      borderRadius: "5vh",
       color: "white",
       textAlign: "center"
     };

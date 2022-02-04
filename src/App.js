@@ -2,15 +2,13 @@ import React, { Component } from "react";
 import "./App.css";
 import Numeron from "./Numeron.js";
 import Timer from "./Timer.js";
-import Counter from "./Counter.js";
 class App extends Component {
   render() {
     return (
-      <>
+      <div className="body">
         <Numeron />
-        <Timer />
-        <Counter />
-      </>
+        <Timer/>
+      </div>
     );
   }
 }
