@@ -82,6 +82,8 @@ class Form extends Component {
   render() {
     return (
       <div>
+        <h1>{this.state.message}</h1>
+        <h1>{this.state.form}</h1>
         <div onClick={()=>this.inputForm("1")}><InputButton x="10" y="50" text="1"  /></div>
         <div onClick={()=>this.inputForm("2")}><InputButton x="40" y="50" text="2"  /></div>
         <div onClick={()=>this.inputForm("3")}><InputButton x="70" y="50" text="3"  /></div>
