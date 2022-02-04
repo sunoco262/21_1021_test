@@ -50,7 +50,7 @@ class Timer extends Component {
   render() {
     return (
       <>
-        <h1 className="Clock">{this.state.nowTime}</h1>
+        <h1>残り時間 {this.state.timer}</h1>
       </>
     );
   }
