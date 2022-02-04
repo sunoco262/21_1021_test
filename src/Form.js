@@ -4,6 +4,10 @@ import InputButton from "./InputButton";
 //ansがint型の配列　inputがstr型の文字列
 let form ="_ _ _ _";
 let cursor = 0;
+function initializeForm(num){
+  form ="_ _ _ _";
+  cursor = 0;
+}
 function editform(num){
   if(cursor>3)return;
   let ary = form.split(" ");
@@ -74,8 +78,11 @@ class Form extends Component {
   }
   submitForm() {
     console.log(parseInt(this.state.form.split(" ").join("")))
+    initializeForm();
     this.setState({
-      message: check(this.props.keyword,parseInt(this.state.form.split(" ").join(""))) + "!!"
+      message: check(this.props.keyword,parseInt(this.state.form.split(" ").join(""))) + "!!",
+      form:form,
+      cursor:cursor
     });
     
   }
