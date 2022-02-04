@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./History.css";
 
-let y = 0;
+
 class History extends Component {
   constructor(props) {
     super(props);
