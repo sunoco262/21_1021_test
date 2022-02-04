@@ -1,6 +1,6 @@
 .body{
   position:absolute;
-  background: linear-gradient(red, orange);
+  background: linear-gradient(270deg ,rgb(2,0,36), rgb(0,212,255));
   top: 0;
   left:0;
   width:100vw;
