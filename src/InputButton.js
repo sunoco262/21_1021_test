@@ -14,7 +14,8 @@ class InputButton extends Component {
       left: this.x + "vw",
       borderRadius: "5vh",
       color: "white",
-      textAlign: "center"
+      textAlign: "center",
+      fontSize:"5vh",
     };
   }
   render() {
