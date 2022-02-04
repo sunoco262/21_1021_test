@@ -34,7 +34,7 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: "パスワードを入力してください"
+      message: "4桁の数字を入力してください"
     };
     this.doChange = this.doChange.bind(this);
     this.doSubmit = this.doSubmit.bind(this);
@@ -57,9 +57,21 @@ class Form extends Component {
         <form onSubmit={this.doSubmit}>
           <div className="form-group">
             <p>{this.state.message}</p>
+            <h1>_ _ _ _</h1>
             <label>Guess:</label>
-            <InputButton x="10" y="10" text="0" onClick="" />
-            <InputButton x="30" y="10" text="1" />
+            {/** todo */}
+            <InputButton x="10" y="50" text="1" onClick="" />
+            <InputButton x="40" y="50" text="2" />
+            <InputButton x="70" y="50" text="3" />
+            <InputButton x="10" y="62" text="4" onClick="" />
+            <InputButton x="40" y="62" text="5" />
+            <InputButton x="70" y="62" text="6" />
+            <InputButton x="10" y="74" text="7" onClick="" />
+            <InputButton x="40" y="74" text="8" />
+            <InputButton x="70" y="74" text="9" />
+            <InputButton x="10" y="86" text="←" onClick="" />
+            <InputButton x="40" y="86" text="0" />
+            <InputButton x="70" y="86" text="✔" />
             <input
               type="text"
               className="form-control"
