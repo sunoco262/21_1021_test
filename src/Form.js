@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import InputButton from "./InputButton";
+import History from "./History";
+
 //todo Numeronの判定に変える
 //ansがint型の配列　inputがstr型の文字列
 let form ="_ _ _ _";
 let cursor = 0;
+let history = [];//文字列を入れる
 function initializeForm(num){
   form ="_ _ _ _";
   cursor = 0;
@@ -40,6 +43,8 @@ function check(ans, input) {
     }
     str = "eat" + eat + " bite" + bite;
   }
+  history.push(input+" "+str)
+  console.log(history)
   return str;
 }
 class Form extends Component {
@@ -51,6 +56,8 @@ class Form extends Component {
       message: "4桁の数字を入力してください",
       form:form,
       cursor:cursor,
+      checkCount:0,
+      history:history
     };
     this.inputForm = this.inputForm.bind(this);
   }
@@ -82,7 +89,8 @@ class Form extends Component {
     this.setState({
       message: check(this.props.keyword,parseInt(this.state.form.split(" ").join(""))) + "!!",
       form:form,
-      cursor:cursor
+      cursor:cursor,
+      checkCount:this.state.checkCount+1
     });
     
   }
@@ -91,6 +99,8 @@ class Form extends Component {
       <div>
         <h1>{this.state.message}</h1>
         <h1>{this.state.form}</h1>
+        <h1>{this.state.checkCount}回</h1>
+
         <div onClick={()=>this.inputForm("1")}><InputButton x="10" y="50" text="1"  /></div>
         <div onClick={()=>this.inputForm("2")}><InputButton x="40" y="50" text="2"  /></div>
         <div onClick={()=>this.inputForm("3")}><InputButton x="70" y="50" text="3"  /></div>
@@ -104,6 +114,7 @@ class Form extends Component {
         <div onClick={()=>this.inputForm("0")}><InputButton x="40" y="86" text="0"  /></div>
         <div onClick={()=>this.submitForm()}><InputButton x="70" y="86" text="✔"  /></div>
 
+        <History history={history.join(" ")}/>
       </div>
     );
   }
