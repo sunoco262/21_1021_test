@@ -114,7 +114,8 @@ class Form extends Component {
         <div onClick={()=>this.inputForm("0")}><InputButton x="40" y="86" text="0"  /></div>
         <div onClick={()=>this.submitForm()}><InputButton x="70" y="86" text="✔"  /></div>
 
-        <History history={history.join(" ")}/>
+        <History history={this.state.history.join("\n")}/>
+        
       </div>
     );
   }
