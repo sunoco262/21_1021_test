@@ -11,6 +11,7 @@ function initializeForm(num){
   form ="_ _ _ _";
   cursor = 0;
 }
+
 function editform(num){
   if(cursor>3)return;
   let ary = form.split(" ");
@@ -19,6 +20,7 @@ function editform(num){
   console.log(ary)
   form = ary.join(" ");
 }
+
 function check(ans, input) {
   var eat, bite;
   var num = [0, 0, 0, 0];
@@ -103,7 +105,8 @@ class Form extends Component {
         <h1>{this.state.message}</h1>
         <h1>{this.state.form}</h1>
         <h1>{this.state.checkCount}回</h1>
-
+        {/* todo */}
+        <a href="https://calm-bay-090786e10.1.azurestaticapps.net/">最初から遊ぶ</a>
         <div onClick={()=>this.inputForm("1")}><InputButton x="10" y="50" text="1"  /></div>
         <div onClick={()=>this.inputForm("2")}><InputButton x="40" y="50" text="2"  /></div>
         <div onClick={()=>this.inputForm("3")}><InputButton x="70" y="50" text="3"  /></div>
