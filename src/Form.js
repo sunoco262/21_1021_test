@@ -43,7 +43,7 @@ function check(ans, input) {
         bite++;
       }
     }
-    str = eat + "eat　" + bite + "bite";
+    str = eat + "eat " + bite + "bite";
   }
   history.push(input+" "+str)
   if(eat===4){
