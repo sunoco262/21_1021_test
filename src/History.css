@@ -1,11 +1,13 @@
 .box{
   position:absolute;
   top:10vh;
-  left:10vw;
-  width:80vw;
+  left:50vw;
+  width:40vw;
   height:30vh;
-  background-color: rgb(10,10,10);
   opacity:0.6;
+  overflow-y:scroll;
+  border: solid 3px black;/*線*/
+  border-radius: 10px;/*角の丸み*/
   overflow-y:scroll;
 }
 .box p{
