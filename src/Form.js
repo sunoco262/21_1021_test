@@ -44,6 +44,9 @@ function check(ans, input) {
     str = "eat" + eat + " bite" + bite;
   }
   history.push(input+" "+str)
+  if(eat===4){
+    history.push("ゲームクリア！！")
+  }
   console.log(history)
   return str;
 }
