@@ -32,7 +32,7 @@ function check(ans, num) {
       eat++;
     }
     for (b = 0; b < 4; b++) {
-      if (a !== b && parseInt(num[a]) === toString(ans[b])) {
+      if (a !== b && parseInt(num[a]) === ans[b]) {
         bite++;
       }
     }
