@@ -7,6 +7,23 @@
   height:100%;
 }
 
+.box{
+  position:absolute;
+  top:3vh;
+  left:50vw;
+  width:40vw;
+  height:40vh;
+  opacity:0.6;
+  font-size:1.5rem;
+  overflow-y:scroll;
+  border: solid 3px black;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  overflow-y:scroll;
+}
+.box p{
+  color:white;
+  opacity:1;
+}
 .App {
   text-align: center;
 }

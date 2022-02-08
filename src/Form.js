@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import InputButton from "./InputButton";
-import History from "./History";
 
 //todo Numeronの判定に変える
 //ansがint型の配列　inputがstr型の文字列
@@ -43,7 +42,7 @@ function check(ans, input) {
         bite++;
       }
     }
-    str = eat + "eat " + bite + "bite";
+    str = eat + "eat " + bite + "bite\n";
   }
   history.push(input+" "+str)
   if(eat===4){
@@ -89,6 +88,9 @@ class Form extends Component {
     })
   }
   submitForm() {
+    if ( this.state.form.indexOf('_') !== -1) {
+      return 0
+    }
     console.log(parseInt(this.state.form.split(" ").join("")))
     initializeForm();
     this.setState({
@@ -97,7 +99,9 @@ class Form extends Component {
       cursor:cursor,
       checkCount:this.state.checkCount+1
     });
-    
+    const element = document.getElementById('box');
+    element.scrollTo(0, element.scrollHeight);
+
   }
   render() {
     return (
@@ -119,9 +123,13 @@ class Form extends Component {
         <div onClick={()=>this.deleteForm()}><InputButton x="10" y="86" text="←"  /></div>
         <div onClick={()=>this.inputForm("0")}><InputButton x="40" y="86" text="0"  /></div>
         <div onClick={()=>this.submitForm()}><InputButton x="70" y="86" text="✔"  /></div>
-
-        <History history={"履歴："+this.state.history.join("\n")}/>
-        
+        <div class="box" id="box">
+          {this.state.history.map(item => (
+            <div key={item}>
+              <p>{item}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
