@@ -124,11 +124,13 @@ class Form extends Component {
         <div onClick={()=>this.inputForm("0")}><InputButton x="40" y="86" text="0"  /></div>
         <div onClick={()=>this.submitForm()}><InputButton x="70" y="86" text="✔"  /></div>
         <div class="box" id="box">
+          <h2>履歴</h2>
           {this.state.history.map(item => (
             <div key={item}>
               <p>{item}</p>
             </div>
           ))}
+          <p>←</p>
         </div>
       </div>
     );
