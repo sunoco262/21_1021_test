@@ -31,7 +31,7 @@ function check(ans, num) {
     if (parseInt(num[a]) === ans[a]) {
       eat++;
     }
-    for (b = a; b < 4; b++) {
+    for (b = 0; b < 4; b++) {
       if (a !== b && parseInt(num[a]) === ans[b]) {
         bite++;
       }
@@ -105,6 +105,7 @@ class Form extends Component {
         <h1>{this.state.checkCount}回</h1>
         {/* todo */}
         <a href="https://calm-bay-090786e10.1.azurestaticapps.net/">最初から遊ぶ</a>
+
         <div onClick={()=>this.inputForm("1")}><InputButton x="10" y="50" text="1"  /></div>
         <div onClick={()=>this.inputForm("2")}><InputButton x="40" y="50" text="2"  /></div>
         <div onClick={()=>this.inputForm("3")}><InputButton x="70" y="50" text="3"  /></div>
