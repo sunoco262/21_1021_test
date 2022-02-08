@@ -31,7 +31,7 @@ function check(ans, num) {
     if (parseInt(num[a]) === ans[a]) {
       eat++;
     }
-    for (b = 0; b < 4; b++) {
+    for (b = a; b < 4; b++) {
       if (a !== b && parseInt(num[a]) === ans[b]) {
         bite++;
       }
