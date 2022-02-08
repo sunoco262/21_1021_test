@@ -20,31 +20,25 @@ function editform(num){
   form = ary.join(" ");
 }
 
-function check(ans, input) {
+function check(ans, num) {
   var eat, bite;
-  var num = [0, 0, 0, 0];
   var a, b;
   var str;
-
-  num[0] = parseInt(input / 1000, 10);
-  num[1] = parseInt((input - num[0] * 1000) / 100, 10);
-  num[2] = parseInt((input - num[0] * 1000 - num[1] * 100) / 10, 10);
-  num[3] = parseInt(input - num[0] * 1000 - num[1] * 100 - num[2] * 10, 10);
 
   eat = 0;
   bite = 0;
   for (a = 0; a < 4; a++) {
-    if (num[a] === ans[a]) {
+    if (parseInt(num[a]) === ans[a]) {
       eat++;
     }
     for (b = 0; b < 4; b++) {
-      if (a !== b && num[a] === ans[b]) {
+      if (a !== b && parseInt(num[a]) === toString(ans[b])) {
         bite++;
       }
     }
     str = eat + "eat " + bite + "bite\n";
   }
-  history.push(input+" "+str)
+  history.push(num.join("")+" "+str)
   if(eat===4){
     history.push("ゲームクリア！！")
   }
@@ -91,10 +85,10 @@ class Form extends Component {
     if ( this.state.form.indexOf('_') !== -1) {
       return 0
     }
-    console.log(parseInt(this.state.form.split(" ").join("")))
+    console.log(this.state.form.split(" "))
     initializeForm();
     this.setState({
-      message: check(this.props.keyword,parseInt(this.state.form.split(" ").join(""))) + "!!",
+      message: check(this.props.keyword,this.state.form.split(" ")) + "!!",
       form:form,
       cursor:cursor,
       checkCount:this.state.checkCount+1
