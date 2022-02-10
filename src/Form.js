@@ -6,6 +6,9 @@ import InputButton from "./InputButton";
 let form ="_ _ _ _";
 let cursor = 0;
 let history = [];//文字列を入れる
+let button_x = [10,40,70];
+let button_y = [50,62,74];
+
 function initializeForm(num){
   form ="_ _ _ _";
   cursor = 0;
@@ -105,16 +108,12 @@ class Form extends Component {
         <h1>{this.state.checkCount}回</h1>
         {/* todo */}
         <a href="https://calm-bay-090786e10.1.azurestaticapps.net/">最初から遊ぶ</a>
-
-        <div onClick={()=>this.inputForm("1")}><InputButton x="10" y="50" text="1"  /></div>
-        <div onClick={()=>this.inputForm("2")}><InputButton x="40" y="50" text="2"  /></div>
-        <div onClick={()=>this.inputForm("3")}><InputButton x="70" y="50" text="3"  /></div>
-        <div onClick={()=>this.inputForm("4")}><InputButton x="10" y="62" text="4"  /></div>
-        <div onClick={()=>this.inputForm("5")}><InputButton x="40" y="62" text="5"  /></div>
-        <div onClick={()=>this.inputForm("6")}><InputButton x="70" y="62" text="6"  /></div>
-        <div onClick={()=>this.inputForm("7")}><InputButton x="10" y="74" text="7"  /></div>
-        <div onClick={()=>this.inputForm("8")}><InputButton x="40" y="74" text="8"  /></div>
-        <div onClick={()=>this.inputForm("9")}><InputButton x="70" y="74" text="9"  /></div>
+        {button_x.map((item_x,x) => (
+          button_y.map((item_y,y) => (
+            <div onClick={()=>this.inputForm(y*3+x+1)}><InputButton x={item_x} y={item_y} text={y*3+x+1}  /></div>
+          ))
+        ))}
+        
         <div onClick={()=>this.deleteForm()}><InputButton x="10" y="86" text="←"  /></div>
         <div onClick={()=>this.inputForm("0")}><InputButton x="40" y="86" text="0"  /></div>
         <div onClick={()=>this.submitForm()}><InputButton x="70" y="86" text="✔"  /></div>
