@@ -48,7 +48,16 @@ function check(ans, num) {
   console.log(history)
   return str;
 }
-
+function isInclude(form,num){
+  let res;
+  if ( form.indexOf(num) !== -1) {
+    res = true;    
+  }
+  else{
+    res = false;
+  }
+  return res;
+}
 class Form extends Component {
   input = "";
   text = "";
@@ -103,23 +112,24 @@ class Form extends Component {
   }
   manageButton(num,x,y){
     let button;
-    if(num<=9){
-      button = <div onClick={
-      ()=>this.inputForm(num)}>
-      <InputButton x={x} y={y} text={num}  />
-      </div>;
+    if(num<=9||num===11){
+      if(isInclude(this.state.form,num%11)){
+        button = 
+          <InputButton x={x} y={y} text={num%11}  on={true}/>;
+      }
+      else{
+        button = <div onClick={
+          ()=>this.inputForm(num%11)}>{/* 11の場所に０のボタンを置きたいため */}
+          <InputButton x={x} y={y} text={num%11}  on={false}/>
+          </div>;
+      }
+      
     }
     else{
       if(num===10){
         button = <div onClick={
           ()=>this.deleteForm(0)}>
           <InputButton x={x} y={y} text="←"  />
-        </div>;
-      }
-      else if(num===11){
-        button = <div onClick={
-          ()=>this.inputForm(0)}>
-          <InputButton x={x} y={y} text={0}  />
         </div>;
       }
       else if(num===12){

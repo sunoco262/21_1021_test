@@ -6,7 +6,7 @@ class InputButton extends Component {
     this.x = this.props.x;
     this.y = this.props.y;
     this.style = {
-      backgroundColor: "gray",
+      backgroundColor: this.props.on ? "black":"gray",
       position: "absolute",
       width: "10vh",
       height: "10vh",
