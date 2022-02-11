@@ -161,7 +161,7 @@ class Form extends Component {
         <h1>{this.state.checkCount}回</h1>
         {/* todo */}
         <a href="https://calm-bay-090786e10.1.azurestaticapps.net/">最初から遊ぶ</a>{/*todo */}
-        <h2 onClick={()=> this.changeDifficulty()}>難易度変更</h2>
+        <button onClick={()=> this.changeDifficulty()}>難易度変更</button>
         <h2>難易度:{this.state.Difficulty}</h2>
 
         {button_y.map((item_y,y) => (
