@@ -7,7 +7,7 @@ let form ="_ _ _ _";
 let cursor = 0;
 let history = [];//文字列を入れる
 let button_x = [10,40,70];
-let button_y = [50,62,74];
+let button_y = [50,62,74,86];
 
 function initializeForm(num){
   form ="_ _ _ _";
@@ -48,6 +48,7 @@ function check(ans, num) {
   console.log(history)
   return str;
 }
+
 class Form extends Component {
   input = "";
   text = "";
@@ -100,6 +101,37 @@ class Form extends Component {
     element.scrollTo(0, element.scrollHeight);
 
   }
+  manageButton(num,x,y){
+    let button;
+    if(num<=9){
+      button = <div onClick={
+      ()=>this.inputForm(num)}>
+      <InputButton x={x} y={y} text={num}  />
+      </div>;
+    }
+    else{
+      if(num===10){
+        button = <div onClick={
+          ()=>this.deleteForm(0)}>
+          <InputButton x={x} y={y} text="←"  />
+        </div>;
+      }
+      else if(num===11){
+        button = <div onClick={
+          ()=>this.inputForm(0)}>
+          <InputButton x={x} y={y} text={0}  />
+        </div>;
+      }
+      else if(num===12){
+        button = <div onClick={
+          ()=>this.submitForm(0)}>
+          <InputButton x={x} y={y} text="✔"  />
+        </div>;
+      }
+    }
+  
+    return button
+  }
   render() {
     return (
       <div>
@@ -108,16 +140,13 @@ class Form extends Component {
         <h1>{this.state.checkCount}回</h1>
         {/* todo */}
         <a href="https://calm-bay-090786e10.1.azurestaticapps.net/">最初から遊ぶ</a>
-        {button_x.map((item_x,x) => (
-          button_y.map((item_y,y) => (
-            <div onClick={()=>this.inputForm(y*3+x+1)}><InputButton x={item_x} y={item_y} text={y*3+x+1}  /></div>
+        {button_y.map((item_y,y) => (
+          button_x.map((item_x,x) => (
+            this.manageButton(y*3+x+1,item_x,item_y)
           ))
         ))}
         
-        <div onClick={()=>this.deleteForm()}><InputButton x="10" y="86" text="←"  /></div>
-        <div onClick={()=>this.inputForm("0")}><InputButton x="40" y="86" text="0"  /></div>
-        <div onClick={()=>this.submitForm()}><InputButton x="70" y="86" text="✔"  /></div>
-        <div class="box" id="box">
+        <div className="box" id="box">
           <h2>履歴</h2>
           {this.state.history.map(item => (
             <div key={item}>
