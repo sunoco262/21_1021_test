@@ -149,9 +149,10 @@ class Form extends Component {
     this.setState({
       formSize : isNormalMode ? 3 : 4,
       form:isNormalMode ? "_ _ _":"_ _ _ _",
-      Difficulty:isNormalMode ? "Easy":"Normal"
+      Difficulty:isNormalMode ? "Easy":"Normal",
+      cursor:0,
     })
-    form = isNormalMode ? "_ _ _":"_ _ _ _";
+    initializeForm();
   }
   render() {
     return (
